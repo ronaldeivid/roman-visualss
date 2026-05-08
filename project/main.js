@@ -18,8 +18,8 @@ function submitForm(event) {
   
   let hayErrores = false;
 
-  hayErrores = setError('name',     'err-name',     name.length<4)               || hayErrores;
-  hayErrores = setError('company',  'err-company',  company.length<4)            || hayErrores;
+  hayErrores = setError('name',     'err-name',     name.length<4)  || /\d/.test(name))  || hayErrores;
+  hayErrores = setError('company',  'err-company',  company.length<4) || !/[a-zA-Z]/.test(company)) || hayErrores;
   hayErrores = setError('email',    'err-email',    !emailRegex.test(email)) || hayErrores;
   hayErrores = setError('website', 'err-website',  !website)   || hayErrores;
   hayErrores = setError('script',   'err-script',   !script)             || hayErrores;
