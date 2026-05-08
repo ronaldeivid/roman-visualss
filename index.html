@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Request | roman.visualss</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-title">ROMAN <span class="grad">VISUALSS</span></span>
+  <p class="top-tagline">
+    <span class="line1">I am the only option</span>
+    <span class="sub-line">for your problem.</span>
+  </p>
+</div>
+
+<div class="container">
+
+  <div id="formView">
+    <h1>Request a project</h1>
+
+    <p class="intro">
+      My animation projects start at a base budget of 1300$, allowing me to focus on every detail and deliver a creative, high-quality result. If you'd like to see more of my work, feel free to check out my <a href="https://www.linkedin.com/in/ronald-manjarres/" target="_blank">linkedin</a> or <a href="https://www.instagram.com/roman.visualss/" target="_blank">Instagram</a> for examples.
+    </p>
+
+    <div class="avail">
+      <span class="dot"></span>
+      Availability
+    </div>
+
+    <form id="projectForm" onsubmit="submitForm(event)" novalidate>
+
+      <div class="section-title">Contact Information</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Name <span class="req">*</span></label>
+          <input type="text" id="name" placeholder="Full name" />
+          <p class="err-msg" id="err-name">Please enter your name.</p>
+        </div>
+        <div class="field">
+          <label>Company name <span class="req">*</span></label>
+          <input type="text" id="company" placeholder="Your company or brand" />
+          <p class="err-msg" id="err-company">Please enter your company name.</p>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="your@email.com" />
+          <p class="err-msg" id="err-email">Please enter a valid email.</p>
+        </div>
+        <div class="field">
+          <label>Website <span class="req">*</span></label>
+          <input type="url" id="website" placeholder="https://yoursite.com" />
+          <p class="err-msg" id="err-website">Please enter your website.</p>
+        </div>
+      </div>
+
+      <div class="section-title">Project Information</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="script">Script / Storyboard? <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="script">
+              <option value="" disabled selected>Select an option</option>
+              <option value="yes">Yes, I have one</option>
+              <option value="in-progress">In progress</option>
+              <option value="no">Not yet</option>
+            </select>
+          </div>
+          <p class="err-msg" id="err-script">Please select an option.</p>
+        </div>
+        <div class="field">
+          <label for="assets">Do you have assets / wireframes? <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="assets">
+              <option value="" disabled selected>Select an option</option>
+              <option value="yes">Yes</option>
+              <option value="some">Some of them</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <p class="err-msg" id="err-assets">Please select an option.</p>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="duration">Animation duration <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="duration">
+              <option value="" disabled selected>Select an option</option>
+              <option value="under30">Under 30 seconds</option>
+              <option value="30to60">30 – 60 seconds</option>
+              <option value="1to2min">1 – 2 minutes</option>
+              <option value="2to5min">2 – 5 minutes</option>
+              <option value="over5min">Over 5 minutes</option>
+            </select>
+          </div>
+          <p class="err-msg" id="err-duration">Please select a duration.</p>
+        </div>
+        <div class="field">
+          <label for="deadline-day">Preferred deadline <span class="req">*</span></label>
+          <div class="date-wrap">
+            <select id="deadline-day" class="date-part">
+              <option value="" disabled selected>Day</option>
+            </select>
+            <select id="deadline-month" class="date-part">
+              <option value="" disabled selected>Month</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select id="deadline-year" class="date-part">
+              <option value="" disabled selected>Year</option>
+            </select>
+          </div>
+          <p class="err-msg" id="err-deadline">Please select a deadline.</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Tell me about your project <span class="req">*</span></label>
+        <textarea id="message" placeholder="Describe your project: goals, audience, visual references, style..."></textarea>
+        <p class="err-msg" id="err-message">Please describe your project (at least 20 characters).</p>
+      </div>
+
+      <hr />
+
+      <div class="privacy-row">
+        <input type="checkbox" id="privacy" />
+        <label class="privacy-label" for="privacy">
+          I agree to the processing of my data in accordance with the
+          <a href="privacy.html" target="_blank">Privacy Policy</a>.
+          My information will only be used to respond to this request.
+        </label>
+      </div>
+      <p class="err-msg" id="err-privacy">You must accept the privacy policy.</p>
+
+      <button type="submit" class="submit-btn">Submit request</button>
+
+    </form>
+  </div>
+
+  <div id="successView" class="hidden success">
+    <h1>Thank you</h1>
+    <p>
+      Thank you for submitting your request. I'll carefully review all the details and get back to you within <strong>48 hours</strong> with a response and the next steps.
+    </p>
+    <p>
+      In the meantime, feel free to explore more of my work on
+      <a href="https://www.instagram.com/roman.visualss/" target="_blank">Instagram</a>.
+    </p>
+    <p class="signature">— roman.visualss</p>
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
+ 
