@@ -36,10 +36,24 @@ function submitForm(event) {
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
+  const scriptLabels   = { 'yes': 'Yes, I have one', 'in-progress': 'In progress', 'no': 'Not yet' };
+  const assetsLabels   = { 'yes': 'Yes', 'some': 'Some of them', 'no': 'No' };
+  const durationLabels = { 'under30': 'Under 30 seconds', '30to60': '30 – 60 seconds', '1to2min': '1 – 2 minutes', '2to5min': '2 – 5 minutes', 'over5min': 'Over 5 minutes' };
+
   fetch('https://formspree.io/f/xlgzlppp', {
     method: 'POST',
     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, company, email, website, script, assets, duration, deadline, message })
+    body: JSON.stringify({
+      name,
+      company,
+      email,
+      website,
+      script:   scriptLabels[script],
+      assets:   assetsLabels[assets],
+      duration: durationLabels[duration],
+      deadline,
+      message
+    })
   })
   .then(function(r) {
     if (r.ok) {
