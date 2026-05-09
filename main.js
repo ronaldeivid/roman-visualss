@@ -10,10 +10,6 @@ function submitForm(event) {
   const duration = document.getElementById('duration').value;
   const message  = document.getElementById('message').value.trim();
   const privacy  = document.getElementById('privacy').checked;
-  const day      = document.getElementById('deadline-day').value;
-  const month    = document.getElementById('deadline-month').value;
-  const year     = document.getElementById('deadline-year').value;
-  const deadline = day && month && year ? `${day}/${month}/${year}` : '';
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -26,7 +22,6 @@ function submitForm(event) {
   hayErrores = setError('script',       'err-script',   !script) || hayErrores;
   hayErrores = setError('assets',       'err-assets',   !assets) || hayErrores;
   hayErrores = setError('duration',     'err-duration', !duration) || hayErrores;
-  hayErrores = setError('deadline-day', 'err-deadline', !day || !month || !year) || hayErrores;
   hayErrores = setError('message',      'err-message',  message.length < 20 || !/[a-zA-Z]/.test(message)) || hayErrores;
   hayErrores = setErrorPrivacy(!privacy) || hayErrores;
 
